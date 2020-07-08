@@ -51,7 +51,7 @@ def upload():
         upload.save(destination)
         colorize_image(image_filename=destination,net=net)
         
-    return render_template("complete.html")
+    return send_from_directory("static","color_pic.jpg")
 
 @app.route('/upload/<filename>')
 def send_image(filename):
